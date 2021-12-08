@@ -40,8 +40,23 @@ const getAllLocations = async (req, res) => {
 
 const getLocationWithId = async (req, res) => {
     try {
-        console.log(req.params);
         let location = await Location.findAll({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.status(200).send(location);
+    } catch (error) {
+        res.status(500).send({
+            code: 1,
+            message: error.message
+        });
+    }
+}
+
+const deleteLocationWithId = async (req, res) => {
+    try {
+        let location = await Location.destroy({
             where: {
                 id: req.params.id
             }
@@ -60,6 +75,7 @@ const getLocationWithId = async (req, res) => {
 const location = {
     addLocation: addLocation,
     getAllLocations: getAllLocations,
-    getLocationWithId: getLocationWithId
+    getLocationWithId: getLocationWithId,
+    deleteLocationWithId: deleteLocationWithId
 }
 module.exports = location;

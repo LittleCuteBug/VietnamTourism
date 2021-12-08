@@ -21,4 +21,9 @@ router.post(
     controller.location.addLocation
 );
 
+router.delete(
+    '/:id',
+    controller.location.deleteLocationWithId
+)
+
 module.exports = router;
