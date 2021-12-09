@@ -10,7 +10,7 @@ const db = require('./db/models');
 
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "*"
 };
 
 app.use(cors(corsOptions));
