@@ -61,7 +61,9 @@ const deleteLocationWithId = async (req, res) => {
                 id: req.params.id
             }
         });
-        res.status(200).send(location);
+        res.status(200).send({
+            message: `Deleted location with id: ${req.params.id}`
+        });
     } catch (error) {
         res.status(500).send({
             code: 1,

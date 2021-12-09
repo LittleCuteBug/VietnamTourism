@@ -22,7 +22,7 @@ router.post(
 );
 
 router.delete(
-    '/:id',
+    '/delete/:id',
     controller.location.deleteLocationWithId
 )
 
