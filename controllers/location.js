@@ -18,6 +18,9 @@ const addLocation = async (req, res) => {
         type: req.body.type
     }
     try {
+        if(!fs.existsSync('images')) {
+            fs.mkdirSync('images');
+        }
         await fs.promises.writeFile(url, imgBase64Data, 'base64');
         await Location.create(newLocation);
         res.status(200).send({
