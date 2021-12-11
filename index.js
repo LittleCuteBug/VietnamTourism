@@ -23,6 +23,6 @@ app.use('/', router);
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, async () => {
-  await db.sequelize.sync({force: true});
+  //await db.sequelize.sync({force: true});
   console.log(`Server is running on port ${PORT}.`);
 });

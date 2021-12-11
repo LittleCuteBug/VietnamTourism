@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "Pi31415926!",
     "database": "VietnamTourism",
     "host": "127.0.0.1",
     "port": "3306",

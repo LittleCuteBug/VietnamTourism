@@ -103,12 +103,26 @@ const deleteLocationWithId = async (req, res) => {
     }
 }
 
+const filterLocation = () => {
+    try {
+        console.log(req.body);
+        
+    } catch (error) {
+        res.status(500).send({
+            code:1,
+            message: error.message
+        })
+    }
+
+}
+
 
 
 const location = {
     addLocation: addLocation,
     getAllLocations: getAllLocations,
     getLocationWithId: getLocationWithId,
-    deleteLocationWithId: deleteLocationWithId
+    deleteLocationWithId: deleteLocationWithId,
+    filterLocation: filterLocation
 }
 module.exports = location;
