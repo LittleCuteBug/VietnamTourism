@@ -15,4 +15,16 @@ router.post(
     '/add_location',
     controller.tour.addLocation
 )
+router.delete(
+    '/delete/:id',
+    controller.tour.deleteTour
+)
+router.post(
+    '/review_comment',
+    controller.tour.addReview
+)
+router.post(
+    '/delete_review',
+    controller.tour.deleteReview
+)
 module.exports = router;
